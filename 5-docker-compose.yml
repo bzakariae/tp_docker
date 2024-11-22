@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  convos:
+    image: ghcr.io/convos-chat/convos:stable
+    container_name: convos
+    ports:
+      - "2021:3000"
+    volumes:
+      - ./data:/convos/data
+    environment:
+      - CONVOS_ADMIN_PASSWORD=adminpassword # Change to your preferred password
+    restart: unless-stopped
